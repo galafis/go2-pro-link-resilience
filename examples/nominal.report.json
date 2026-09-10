@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "analysisVersion": "0.1.0",
+  "projectId": "go2-pro-link-resilience",
+  "scenarioId": "continuous-link",
+  "source": "synthetic",
+  "status": "complete",
+  "metrics": [
+    {
+      "key": "delivered",
+      "label": {
+        "en": "Delivered messages",
+        "pt": "Mensagens entregues"
+      },
+      "value": 8,
+      "unit": ""
+    },
+    {
+      "key": "deliveryPct",
+      "label": {
+        "en": "Delivery fraction",
+        "pt": "Fração entregue"
+      },
+      "value": 100,
+      "unit": "%"
+    },
+    {
+      "key": "p95LatencyMs",
+      "label": {
+        "en": "Observed p95 delay",
+        "pt": "Atraso p95 observado"
+      },
+      "value": 100,
+      "unit": "ms"
+    },
+    {
+      "key": "bytes",
+      "label": {
+        "en": "Delivered bytes",
+        "pt": "Bytes entregues"
+      },
+      "value": 8000,
+      "unit": "B"
+    }
+  ],
+  "findings": [],
+  "records": [
+    {
+      "id": "packet-0",
+      "createdMs": 0,
+      "expiryMs": 3000,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 0,
+      "endMs": 80,
+      "arrivalMs": 100,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-1",
+      "createdMs": 100,
+      "expiryMs": 3100,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 100,
+      "endMs": 180,
+      "arrivalMs": 200,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-2",
+      "createdMs": 200,
+      "expiryMs": 3200,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 200,
+      "endMs": 280,
+      "arrivalMs": 300,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-3",
+      "createdMs": 300,
+      "expiryMs": 3300,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 300,
+      "endMs": 380,
+      "arrivalMs": 400,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-4",
+      "createdMs": 400,
+      "expiryMs": 3400,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 400,
+      "endMs": 480,
+      "arrivalMs": 500,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-5",
+      "createdMs": 500,
+      "expiryMs": 3500,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 500,
+      "endMs": 580,
+      "arrivalMs": 600,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-6",
+      "createdMs": 600,
+      "expiryMs": 3600,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 600,
+      "endMs": 680,
+      "arrivalMs": 700,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-7",
+      "createdMs": 700,
+      "expiryMs": 3700,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 700,
+      "endMs": 780,
+      "arrivalMs": 800,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    }
+  ],
+  "windows": [
+    {
+      "startMs": 0,
+      "endMs": 10000,
+      "kbps": 100,
+      "latencyMs": 20
+    }
+  ],
+  "policy": "non-preemptive priority queue; head-of-line blocking; decimal kbps; no retries"
+}

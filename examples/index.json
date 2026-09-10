@@ -1,0 +1,47 @@
+[
+  {
+    "file": "nominal.json",
+    "report": "nominal.report.json",
+    "label": {
+      "en": "Continuous link",
+      "pt": "Conexão contínua"
+    },
+    "expectedStatus": "complete"
+  },
+  {
+    "file": "outage.json",
+    "report": "outage.report.json",
+    "label": {
+      "en": "Intermittent link",
+      "pt": "Conexão intermitente"
+    },
+    "expectedStatus": "complete"
+  },
+  {
+    "file": "expiry.json",
+    "report": "expiry.report.json",
+    "label": {
+      "en": "Expired messages",
+      "pt": "Mensagens expiradas"
+    },
+    "expectedStatus": "review-notes"
+  },
+  {
+    "file": "absent.json",
+    "report": "absent.report.json",
+    "label": {
+      "en": "No link windows",
+      "pt": "Sem janelas de conexão"
+    },
+    "expectedStatus": "review-notes"
+  },
+  {
+    "file": "blocking.json",
+    "report": "blocking.report.json",
+    "label": {
+      "en": "Head-of-line blocking",
+      "pt": "Bloqueio pelo primeiro da fila"
+    },
+    "expectedStatus": "review-notes"
+  }
+]

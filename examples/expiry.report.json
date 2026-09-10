@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "analysisVersion": "0.1.0",
+  "projectId": "go2-pro-link-resilience",
+  "scenarioId": "short-message-lifetime",
+  "source": "synthetic",
+  "status": "review-notes",
+  "metrics": [
+    {
+      "key": "delivered",
+      "label": {
+        "en": "Delivered messages",
+        "pt": "Mensagens entregues"
+      },
+      "value": 0,
+      "unit": ""
+    },
+    {
+      "key": "deliveryPct",
+      "label": {
+        "en": "Delivery fraction",
+        "pt": "Fração entregue"
+      },
+      "value": 0,
+      "unit": "%"
+    },
+    {
+      "key": "p95LatencyMs",
+      "label": {
+        "en": "Observed p95 delay",
+        "pt": "Atraso p95 observado"
+      },
+      "value": null,
+      "unit": "ms"
+    },
+    {
+      "key": "bytes",
+      "label": {
+        "en": "Delivered bytes",
+        "pt": "Bytes entregues"
+      },
+      "value": 0,
+      "unit": "B"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "UNDELIVERED",
+      "message": {
+        "en": "Messages not delivered in this model: 8.",
+        "pt": "Mensagens não entregues neste modelo: 8."
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "packet-0",
+      "createdMs": 0,
+      "expiryMs": 300,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-1",
+      "createdMs": 100,
+      "expiryMs": 400,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-2",
+      "createdMs": 200,
+      "expiryMs": 500,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-3",
+      "createdMs": 300,
+      "expiryMs": 600,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-4",
+      "createdMs": 400,
+      "expiryMs": 700,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-5",
+      "createdMs": 500,
+      "expiryMs": 800,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-6",
+      "createdMs": 600,
+      "expiryMs": 900,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-7",
+      "createdMs": 700,
+      "expiryMs": 1000,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 1000
+    }
+  ],
+  "windows": [
+    {
+      "startMs": 1000,
+      "endMs": 5000,
+      "kbps": 100,
+      "latencyMs": 20
+    }
+  ],
+  "policy": "non-preemptive priority queue; head-of-line blocking; decimal kbps; no retries"
+}

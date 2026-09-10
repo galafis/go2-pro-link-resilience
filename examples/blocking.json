@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "scenarioId": "head-of-line",
+  "source": "synthetic",
+  "ttlScale": 1,
+  "messages": [
+    {
+      "id": "large",
+      "createdMs": 0,
+      "sizeBytes": 10000,
+      "ttlMs": 1000,
+      "priority": 5
+    },
+    {
+      "id": "small",
+      "createdMs": 0,
+      "sizeBytes": 10,
+      "ttlMs": 2000,
+      "priority": 1
+    }
+  ],
+  "windows": [
+    {
+      "startMs": 0,
+      "endMs": 2000,
+      "kbps": 8,
+      "latencyMs": 0
+    }
+  ]
+}

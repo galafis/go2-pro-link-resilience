@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "analysisVersion": "0.1.0",
+  "projectId": "go2-pro-link-resilience",
+  "scenarioId": "training-outage",
+  "source": "synthetic",
+  "status": "complete",
+  "metrics": [
+    {
+      "key": "delivered",
+      "label": {
+        "en": "Delivered messages",
+        "pt": "Mensagens entregues"
+      },
+      "value": 8,
+      "unit": ""
+    },
+    {
+      "key": "deliveryPct",
+      "label": {
+        "en": "Delivery fraction",
+        "pt": "Fração entregue"
+      },
+      "value": 100,
+      "unit": "%"
+    },
+    {
+      "key": "p95LatencyMs",
+      "label": {
+        "en": "Observed p95 delay",
+        "pt": "Atraso p95 observado"
+      },
+      "value": 1990,
+      "unit": "ms"
+    },
+    {
+      "key": "bytes",
+      "label": {
+        "en": "Delivered bytes",
+        "pt": "Bytes entregues"
+      },
+      "value": 8000,
+      "unit": "B"
+    }
+  ],
+  "findings": [],
+  "records": [
+    {
+      "id": "packet-0",
+      "createdMs": 0,
+      "expiryMs": 3000,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 0,
+      "endMs": 80,
+      "arrivalMs": 100,
+      "latencyMs": 100,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-1",
+      "createdMs": 100,
+      "expiryMs": 3100,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 1960,
+      "endMs": 2040,
+      "arrivalMs": 2090,
+      "latencyMs": 1990,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-2",
+      "createdMs": 200,
+      "expiryMs": 3200,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 2040,
+      "endMs": 2120,
+      "arrivalMs": 2170,
+      "latencyMs": 1970,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-3",
+      "createdMs": 300,
+      "expiryMs": 3300,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 1800,
+      "endMs": 1880,
+      "arrivalMs": 1930,
+      "latencyMs": 1630,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-4",
+      "createdMs": 400,
+      "expiryMs": 3400,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 2120,
+      "endMs": 2200,
+      "arrivalMs": 2250,
+      "latencyMs": 1850,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-5",
+      "createdMs": 500,
+      "expiryMs": 3500,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 2200,
+      "endMs": 2280,
+      "arrivalMs": 2330,
+      "latencyMs": 1830,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-6",
+      "createdMs": 600,
+      "expiryMs": 3600,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 1880,
+      "endMs": 1960,
+      "arrivalMs": 2010,
+      "latencyMs": 1410,
+      "sizeBytes": 1000
+    },
+    {
+      "id": "packet-7",
+      "createdMs": 700,
+      "expiryMs": 3700,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 2280,
+      "endMs": 2360,
+      "arrivalMs": 2410,
+      "latencyMs": 1710,
+      "sizeBytes": 1000
+    }
+  ],
+  "windows": [
+    {
+      "startMs": 0,
+      "endMs": 150,
+      "kbps": 100,
+      "latencyMs": 20
+    },
+    {
+      "startMs": 1800,
+      "endMs": 6000,
+      "kbps": 100,
+      "latencyMs": 50
+    }
+  ],
+  "policy": "non-preemptive priority queue; head-of-line blocking; decimal kbps; no retries"
+}

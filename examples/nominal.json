@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "scenarioId": "continuous-link",
+  "source": "synthetic",
+  "ttlScale": 1,
+  "messages": [
+    {
+      "id": "packet-0",
+      "createdMs": 0,
+      "sizeBytes": 1000,
+      "ttlMs": 3000,
+      "priority": 5
+    },
+    {
+      "id": "packet-1",
+      "createdMs": 100,
+      "sizeBytes": 1000,
+      "ttlMs": 3000,
+      "priority": 1
+    },
+    {
+      "id": "packet-2",
+      "createdMs": 200,
+      "sizeBytes": 1000,
+      "ttlMs": 3000,
+      "priority": 1
+    },
+    {
+      "id": "packet-3",
+      "createdMs": 300,
+      "sizeBytes": 1000,
+      "ttlMs": 3000,
+      "priority": 5
+    },
+    {
+      "id": "packet-4",
+      "createdMs": 400,
+      "sizeBytes": 1000,
+      "ttlMs": 3000,
+      "priority": 1
+    },
+    {
+      "id": "packet-5",
+      "createdMs": 500,
+      "sizeBytes": 1000,
+      "ttlMs": 3000,
+      "priority": 1
+    },
+    {
+      "id": "packet-6",
+      "createdMs": 600,
+      "sizeBytes": 1000,
+      "ttlMs": 3000,
+      "priority": 5
+    },
+    {
+      "id": "packet-7",
+      "createdMs": 700,
+      "sizeBytes": 1000,
+      "ttlMs": 3000,
+      "priority": 1
+    }
+  ],
+  "windows": [
+    {
+      "startMs": 0,
+      "endMs": 10000,
+      "kbps": 100,
+      "latencyMs": 20
+    }
+  ]
+}

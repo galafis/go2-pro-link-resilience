@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "analysisVersion": "0.1.0",
+  "projectId": "go2-pro-link-resilience",
+  "scenarioId": "head-of-line",
+  "source": "synthetic",
+  "status": "review-notes",
+  "metrics": [
+    {
+      "key": "delivered",
+      "label": {
+        "en": "Delivered messages",
+        "pt": "Mensagens entregues"
+      },
+      "value": 1,
+      "unit": ""
+    },
+    {
+      "key": "deliveryPct",
+      "label": {
+        "en": "Delivery fraction",
+        "pt": "Fração entregue"
+      },
+      "value": 50,
+      "unit": "%"
+    },
+    {
+      "key": "p95LatencyMs",
+      "label": {
+        "en": "Observed p95 delay",
+        "pt": "Atraso p95 observado"
+      },
+      "value": 1010,
+      "unit": "ms"
+    },
+    {
+      "key": "bytes",
+      "label": {
+        "en": "Delivered bytes",
+        "pt": "Bytes entregues"
+      },
+      "value": 10,
+      "unit": "B"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "warning",
+      "code": "UNDELIVERED",
+      "message": {
+        "en": "Messages not delivered in this model: 1.",
+        "pt": "Mensagens não entregues neste modelo: 1."
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "large",
+      "createdMs": 0,
+      "expiryMs": 1000,
+      "status": "undelivered",
+      "reason": "expired",
+      "startMs": null,
+      "endMs": null,
+      "arrivalMs": null,
+      "latencyMs": null,
+      "sizeBytes": 10000
+    },
+    {
+      "id": "small",
+      "createdMs": 0,
+      "expiryMs": 2000,
+      "status": "delivered",
+      "reason": null,
+      "startMs": 1000,
+      "endMs": 1010,
+      "arrivalMs": 1010,
+      "latencyMs": 1010,
+      "sizeBytes": 10
+    }
+  ],
+  "windows": [
+    {
+      "startMs": 0,
+      "endMs": 2000,
+      "kbps": 8,
+      "latencyMs": 0
+    }
+  ],
+  "policy": "non-preemptive priority queue; head-of-line blocking; decimal kbps; no retries"
+}
