@@ -1,25 +1,31 @@
 # Go2 PRO Link Resilience
 
-**Expose delivery delays and expired messages in intermittent links.**  
-**Identifique atrasos de entrega e mensagens expiradas em conexões intermitentes.**
+**Communication simulation · Simulação de comunicação**
 
-[![Checks](https://github.com/galafis/go2-pro-link-resilience/actions/workflows/ci.yml/badge.svg)](https://github.com/galafis/go2-pro-link-resilience/actions/workflows/ci.yml) · **Working software prototype / Protótipo funcional** · **v0.1.0** · **27 automated tests / testes automatizados** · **MIT**
+<p align="center"><img src="assets/project-overview.svg" width="960" alt="Workflow illustration: Message queue → Availability windows → Delivery evidence"></p>
 
-[English](#english) · [Português](#portugues) · [Live demo · Demonstração](https://galafis.github.io/go2-pro-link-resilience/) · [Five examples · Cinco exemplos](#examples)
+[![Checks](https://github.com/galafis/go2-pro-link-resilience/actions/workflows/ci.yml/badge.svg)](https://github.com/galafis/go2-pro-link-resilience/actions/workflows/ci.yml)
+[English](#english) · [Português](#portugues) · [Guided tour / Visita guiada](docs/SHOWCASE.md) · [Validation / Validação](docs/VALIDATION.md)
 
-## Workflow · Fluxo de trabalho
+> **EN:** Which messages arrive before their expiry during an outage?<br>
+> **PT:** Quais mensagens chegam antes de expirar durante uma interrupção?
 
-```mermaid
-flowchart TD
-  A["Messages and link windows / Mensagens e janelas"] --> B["Admit arrivals and expire old messages / Admitir chegadas e expirar mensagens"]
-  B --> C["Select queue head / Selecionar início da fila"]
-  C --> D{"Fits window and lifetime? / Cabe na janela e validade?"}
-  D -->|Yes / Sim| E["Serialize and record arrival / Serializar e registrar chegada"]
-  D -->|No / Não| F["Advance to next event / Avançar ao próximo evento"]
-  E --> B
-  F --> B
-  B --> G["Preserve every outcome / Preservar cada resultado"]
-```
+## Start here · Comece aqui
+
+| Goal · Objetivo | Where to go · Por onde começar |
+| --- | --- |
+| Understand a real example · Entender um exemplo concreto | [Walkthrough / Roteiro](docs/EXPERIMENTS.md) |
+| Reproduce and compare · Reproduzir e comparar | [Evidence tour / Visita às evidências](docs/SHOWCASE.md) |
+| Inspect the checks · Inspecionar as verificações | [Validation record / Registro de validação](docs/VALIDATION.md) · [CI](https://github.com/galafis/go2-pro-link-resilience/actions/workflows/ci.yml) |
+| Explore in the browser · Explorar no navegador | [Public demonstration / Demonstração pública](https://galafis.github.io/go2-pro-link-resilience/) |
+
+**Example result · Resultado do exemplo:** Delivered messages / Mensagens entregues: **0 **; Delivery fraction / FraÃ§Ã£o entregue: **0 %**; Observed p95 delay / Atraso p95 observado: **None ms**
+
+**Try a comparison · Experimente uma comparação**<br>
+**EN:** Compare outage, expiry and blocking scenarios; separate queued messages from delivered messages.<br>
+**PT:** Compare interrupção, expiração e bloqueio; separe mensagens em fila de mensagens entregues.
+
+[![Existing application preview / Prévia existente da aplicação](assets/preview-en.svg)](https://galafis.github.io/go2-pro-link-resilience/)
 
 <a id="english"></a>
 
